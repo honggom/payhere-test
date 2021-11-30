@@ -5,10 +5,10 @@ spring:
   
   mvc:
     hiddenmethod:      filter:        enabled: true
-    static-path-pattern: /static/** # 2. 이렇게 접근할 수 있게 하겠다.
-  resoruces:
-    static-locations: classpath:/static/ # 1. 여기에 경로를
-    add-mapping: true
+    static-path-pattern: /static/**
+    resources:
+      static-locations: classpath:/static/
+      add-mapping: true
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
