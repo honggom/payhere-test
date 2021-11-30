@@ -21,11 +21,12 @@ import lombok.ToString;
 @Table(name = "user")
 public class User {
 	
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
-	private String email;
+    private String email;
 	
-	private String password;
+    private String password;
+    
 }
