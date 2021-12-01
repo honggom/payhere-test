@@ -1,9 +1,13 @@
 package pay.here.payheretest.entity;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -17,17 +21,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "user")
-public class User {
+@Table(name = "account_book")
+public class AccountBook {
 	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-	
-    @NotNull
-    private String email;
-	
-    @NotNull
-    private String password;
     
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    @NotNull
+    private User user;
+    
+    private LocalDate date;
+
 }
