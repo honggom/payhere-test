@@ -35,7 +35,6 @@ public class JwtUtil {
     
     public String generateJwt(String email) {
         long jwtPeriod = 1000L * 60L * 10L; // 10분
-//      long jwtPeriod = 1000L * 30L;
         
         Map<String, Object> claims = new HashMap<>();
         claims.put("email", email);
@@ -52,7 +51,6 @@ public class JwtUtil {
     
     public void saveRefreshJwt(String email) {
     	long refreshJwtPeriod = 1000L * 60L * 60L * 24L * 21L; // 3주
-//    	long refreshJwtPeriod = 1000L * 60L;
     	
     	Map<String, Object> claims = new HashMap<>();
         claims.put("email", email);
@@ -76,6 +74,7 @@ public class JwtUtil {
         		                            .build());
     }
     
+    // DB에 refresh JWT가 존재하면 삭제한다.
     private void ifExistDeleteJwt(User user) {
         Optional<RefreshJwt> oldRefreshJwt = refreshJwtRepository.findByUser(user);
           
@@ -83,7 +82,6 @@ public class JwtUtil {
             refreshJwtRepository.delete(oldRefreshJwt.get());
         }
     }
-
 
     public boolean isExpired(String token) {
         try {

@@ -49,6 +49,7 @@ public class JwtInterceptor implements HandlerInterceptor {
 					if (jwtUtil.isExpired(jwt)) {
 						if (jwtUtil.isExpired(refreshJwt)) {
 							logger.info("JWT INFO : JWT, REFRESH 토큰이 만료됨 (로그아웃 상태)");
+							refreshJwtRepository.delete(refreshJwtOptional.get());
 							
 			                response.setStatus(UNAUTHORIZED);
 			                return false;

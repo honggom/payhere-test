@@ -1,8 +1,5 @@
 package pay.here.payheretest.dto;
 
-import java.time.LocalDate;
-
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -10,10 +7,14 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-@AllArgsConstructor
-public class AccountBookDto {
-	
+public class UsageHistoryDto {
+		
 	private Long id;
 	
-	private LocalDate date;
+	private Long accountBookId;
+	
+	private String memo;
+	
+	private Long expense;
+
 }

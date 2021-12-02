@@ -13,6 +13,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import pay.here.payheretest.entity.listener.BaseEntity;
 
 @Getter
 @NoArgsConstructor
@@ -20,7 +21,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Entity
 @Table(name = "refresh_jwt")
-public class RefreshJwt {
+public class RefreshJwt extends BaseEntity {
 	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
