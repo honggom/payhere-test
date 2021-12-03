@@ -32,6 +32,7 @@ public class JwtInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         logger.info("Request URI ===> " + "'" + request.getRequestURI() + "'");
+        response.setContentType("text/plain;charset=UTF-8");
         
         if(request.getMethod().equals("OPTIONS")) {
 			return true;

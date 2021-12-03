@@ -1,3 +1,29 @@
+# 실행방법
+- git clone
+  ```bash
+  $ git clone https://github.com/honggom/payhere-test.git
+  ```
+
+- application.yml 수정
+  ```
+  DB 환경에 맞게 url, username, password 등 수정
+  ```
+
+- gradle build
+  ```
+  STS 기준 프로젝트 임포트 후 >> Gradle Tasks >> build >> build
+  ```
+
+- docker build
+  ```bash
+  $ cd payhere-test
+  $ docker build -t 'payhere-0.0.1' .
+  ```
+- run 
+  ```bash
+  $ docker run -p 8080:8080 payhere-0.0.1
+  ```
+
 # API
 - API를 설계할 때 신경쓴 부분은 "요구사항에 충실하자" 였습니다. 따라서 요구사항을 충실히 구현했고 그와
 동시에 최대한 직관적인 코드를 작성하기 위해 노력했습니다.
