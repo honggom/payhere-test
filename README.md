@@ -39,3 +39,11 @@
 
 ### DB DDL 위치 
 - src/main/resources/ddl.txt
+
+---
+
+### 결과 : 탈락
+- 피드백
+  - 컨트롤러, DTO, entity, service 등 레이어를 계층화한 점이 좋았습니다.
+  - 테스트를 Given-When-Then으로 단계를 나누어 테스트의 목적과 과정이 명확했던 점 역시 좋았습니다.
+  - API가 RESTful 하지 않으며, API의 status code의 사용이 아쉬웠습니다.
